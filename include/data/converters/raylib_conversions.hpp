@@ -1,7 +1,8 @@
 #pragma once
 #include <raylib.h>
 
-#include "../data/colour.hpp"
+#include "../colour.hpp"
+#include "data/rect.hpp"
 #include "data/vec3.hpp"
 #include "graphics/game_camera_mode.hpp"
 
@@ -51,4 +52,12 @@ inline GameCameraMode RaylibCameraModeToGameCameraMode(const CameraMode mode) {
             return GameCameraMode::CAMERA_THIRD_PERSON;
     }
     return GameCameraMode::CUSTOM;
+}
+
+inline Rectangle RectToRaylibRectangle(const Rect& rect) {
+    return Rectangle(rect.x, rect.y, rect.width, rect.height);
+}
+
+inline Rect RaylibRectangleToRect(const Rectangle& rectangle) {
+    return Rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 }

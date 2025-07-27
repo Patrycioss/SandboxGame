@@ -2,7 +2,7 @@
 
 #include <raylib.h>
 
-#include "raylib_utility/raylib_conversions.hpp"
+#include "data/converters/raylib_conversions.hpp"
 
 
 RaylibRenderer::RaylibRenderer(const Colour &clearColour) : clearColor(ColourToRaylibColor(clearColour)) {

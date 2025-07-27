@@ -4,11 +4,11 @@
 
 class RaylibGameCamera final : public GameCamera {
 private:
-    Camera3D camera{};
+    Camera3D camera;
     CameraMode mode;
 
 public:
-    RaylibGameCamera(const Vec3 &position, const Vec3 &target, const Vec3 &up, float fov);
+    RaylibGameCamera(const Vec3 &position, const Vec3 &target, const Vec3 &up, float fov, GameCameraMode mode);
     ~RaylibGameCamera() override;
 
     RaylibGameCamera(const RaylibGameCamera &) = delete;

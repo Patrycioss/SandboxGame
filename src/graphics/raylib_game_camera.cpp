@@ -1,19 +1,21 @@
 #include <graphics/raylib_game_camera.hpp>
 
 #include "raylib.h"
-#include "raylib_utility/raylib_conversions.hpp"
+#include "data/converters/raylib_conversions.hpp"
 
 RaylibGameCamera::RaylibGameCamera(
     const Vec3 &position,
     const Vec3 &target,
     const Vec3 &up,
-    const float fov = 45.0f
+    const float fov,
+    const GameCameraMode mode
 ) : camera(Vec3ToRaylibVector3(position),
            Vec3ToRaylibVector3(target),
            Vec3ToRaylibVector3(up)
     ),
-    mode(CAMERA_FREE) {
+    mode(GameCameraModeToRaylibCameraMode(mode)) {
     camera.fovy = fov;
+    camera.projection = CAMERA_PERSPECTIVE;
 }
 
 RaylibGameCamera::~RaylibGameCamera() = default;

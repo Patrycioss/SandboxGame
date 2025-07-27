@@ -21,7 +21,8 @@ set(SOURCES
         src/window/raylib_window.cpp
         src/graphics/raylib_renderer.cpp
         src/graphics/raylib_game_camera.cpp
-        include/graphics/game_camera_mode.hpp
+        src/utils/raylib_random_generator.cpp
+        src/input/raylib_input.cpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
