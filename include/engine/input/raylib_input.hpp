@@ -2,7 +2,7 @@
 #include "input.hpp"
 
 
-class RaylibInput : public Input {
+class RaylibInput final : public Input {
 public:
     RaylibInput() = default;
     ~RaylibInput() override = default;

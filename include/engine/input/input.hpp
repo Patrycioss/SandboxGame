@@ -1,8 +1,8 @@
 #pragma once
 #include "key.hpp"
 #include "mouse.hpp"
-#include "data/vec2.hpp"
-#include "data/vec2i.hpp"
+#include "engine/data/vec2.hpp"
+#include "engine/data/vec2i.hpp"
 
 class Input {
 public:

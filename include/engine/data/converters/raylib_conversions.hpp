@@ -2,9 +2,9 @@
 #include <raylib.h>
 
 #include "../colour.hpp"
-#include "data/rect.hpp"
-#include "data/vec3.hpp"
-#include "graphics/game_camera_mode.hpp"
+#include "engine/data/rect.hpp"
+#include "engine/data/vec3.hpp"
+#include "engine/graphics/game_camera_mode.hpp"
 
 inline Color ColourToRaylibColor(const Colour &colour) {
     return Color(colour.r, colour.g, colour.b, colour.a);

@@ -1,6 +1,5 @@
 #pragma once
 
-
 /**
  * Colour information. All values range from 0 to 255.
  */

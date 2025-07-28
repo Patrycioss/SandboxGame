@@ -2,7 +2,8 @@
 #include <string>
 
 #include "../data/colour.hpp"
-#include "data/vec3.hpp"
+#include "engine/data/vec3.hpp"
+#include "engine/data/vec2i.hpp"
 
 class Renderer {
 public:

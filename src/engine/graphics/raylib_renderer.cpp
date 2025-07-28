@@ -1,8 +1,8 @@
-#include <graphics/raylib_renderer.hpp>
+#include <engine/graphics/raylib_renderer.hpp>
 
 #include <raylib.h>
 
-#include "data/converters/raylib_conversions.hpp"
+#include "engine/data/converters/raylib_conversions.hpp"
 
 
 RaylibRenderer::RaylibRenderer(const Colour &clearColour) : clearColor(ColourToRaylibColor(clearColour)) {

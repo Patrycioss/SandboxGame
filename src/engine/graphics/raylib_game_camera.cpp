@@ -1,7 +1,7 @@
-#include <graphics/raylib_game_camera.hpp>
+#include <engine/graphics/raylib_game_camera.hpp>
 
 #include "raylib.h"
-#include "data/converters/raylib_conversions.hpp"
+#include "engine/data/converters/raylib_conversions.hpp"
 
 RaylibGameCamera::RaylibGameCamera(
     const Vec3 &position,

@@ -1,6 +1,6 @@
 #include <raylib.h>
 
-#include "utils/raylib_random_generator.hpp"
+#include "engine/utils/raylib_random_generator.hpp"
 
 RaylibRandomGenerator::RaylibRandomGenerator(const unsigned int seed) {
     SetRandomSeed(seed);

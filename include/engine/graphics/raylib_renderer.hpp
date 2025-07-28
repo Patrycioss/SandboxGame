@@ -1,8 +1,8 @@
 #pragma once
 #include <raylib.h>
 
-#include "data/vec2i.hpp"
-#include "graphics/renderer.hpp"
+#include "engine/data/vec2i.hpp"
+#include "engine/graphics/renderer.hpp"
 
 class RaylibRenderer final : public Renderer {
 private:

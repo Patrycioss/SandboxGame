@@ -18,11 +18,13 @@ FetchContent_MakeAvailable(raylib)
 
 set(SOURCES
         main.cpp
-        src/window/raylib_window.cpp
-        src/graphics/raylib_renderer.cpp
-        src/graphics/raylib_game_camera.cpp
-        src/utils/raylib_random_generator.cpp
-        src/input/raylib_input.cpp
+        src/engine/window/raylib_window.cpp
+        src/engine/graphics/raylib_renderer.cpp
+        src/engine/graphics/raylib_game_camera.cpp
+        src/engine/utils/raylib_random_generator.cpp
+        src/engine/input/raylib_input.cpp
+        src/game/game.cpp
+        src/game/game.hpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})

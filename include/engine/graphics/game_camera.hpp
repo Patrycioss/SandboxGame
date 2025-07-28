@@ -1,5 +1,5 @@
 #pragma once
-#include "data/vec3.hpp"
+#include "engine/data/vec3.hpp"
 #include "game_camera_mode.hpp"
 
 class GameCamera {

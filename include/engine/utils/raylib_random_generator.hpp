@@ -1,7 +1,6 @@
 #pragma once
 #include "random_generator.hpp"
 
-
 class RaylibRandomGenerator final : public RandomGenerator {
 public:
     explicit RaylibRandomGenerator(unsigned int seed);
