@@ -27,8 +27,16 @@ void RaylibRenderer::drawCube(const Vec3 &position, const Vec3 &size, const Colo
     DrawCube(Vec3ToRaylibVector3(position), size.x, size.y, size.z, ColourToRaylibColor(colour));
 }
 
+void RaylibRenderer::drawCube(const Vec3i &position, const Vec3 &size, const Colour &colour) {
+    DrawCube(Vec3iToRaylibVector3(position), size.x, size.y, size.z, ColourToRaylibColor(colour));
+}
+
 void RaylibRenderer::drawCubeWires(const Vec3 &position, const Vec3 &size, const Colour &colour) {
     DrawCubeWires(Vec3ToRaylibVector3(position), size.x, size.y, size.z, ColourToRaylibColor(colour));
+}
+
+void RaylibRenderer::drawCubeWires(const Vec3i &position, const Vec3 &size, const Colour &colour) {
+    DrawCubeWires(Vec3iToRaylibVector3(position), size.x, size.y, size.z, ColourToRaylibColor(colour));
 }
 
 void RaylibRenderer::drawGrid(const int slices, const float spacing) {

@@ -24,7 +24,10 @@ set(SOURCES
         src/engine/utils/raylib_random_generator.cpp
         src/engine/input/raylib_input.cpp
         src/game/game.cpp
-        src/game/game.hpp
+        include/game/game.hpp
+        src/game/world/world.cpp
+        include/game/world/world.hpp
+        include/game/Block.hpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})

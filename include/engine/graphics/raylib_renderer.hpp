@@ -21,7 +21,9 @@ public:
 
     void setClearColour(const Colour &colour) override;
     void drawCube(const Vec3 &position, const Vec3 &size, const Colour &colour) override;
+    void drawCube(const Vec3i &position, const Vec3 &size, const Colour &colour) override;
     void drawCubeWires(const Vec3 &position, const Vec3 &size, const Colour &colour) override;
+    void drawCubeWires(const Vec3i &position, const Vec3 &size, const Colour &colour) override;
     void drawGrid(int slices, float spacing) override;
     void drawRectangle(const Vec2i &position, const Vec2i &size, const Colour &colour) override;
     void drawRectangleLines(const Vec2i &position, const Vec2i &size, const Colour &colour) override;

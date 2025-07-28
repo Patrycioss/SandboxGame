@@ -1,4 +1,6 @@
-#include "game.hpp"
+#include <thread>
+#include <game/game.hpp>
+#include <game/world/world.hpp>
 
 #include "engine/graphics/game_camera.hpp"
 #include "engine/graphics/raylib_game_camera.hpp"
@@ -24,15 +26,17 @@ void Game::start() {
     window->init();
 
     Vec3 cubePosition{0.0f, 0.0f, 0.0f};
-    Vec3 cubeSize{2.0f, 2.0f, 2.0f};
+    Vec3 cubeSize{1.0f, 1.0f, 1.0f};
     Colour cubeColour{255, 0, 0, 255};
-    Colour cubeWireColour{0, 0, 0, 255};
+    Colour cubeWireColour{0, 0, 255, 255};
     Colour rectColour = {
         randomGenerator->getRandomInt(0, 256), randomGenerator->getRandomInt(0, 256),
         randomGenerator->getRandomInt(0, 256), 255
     };
 
     SetTargetFPS(250);
+
+    World world{};
 
     while (!WindowShouldClose()) {
         if (input->isKeyDown(Key::R)) {
@@ -53,8 +57,13 @@ void Game::start() {
         renderer->beginRendering();
         camera->beginMode3D();
 
-        renderer->drawCube(cubePosition, cubeSize, cubeColour);
-        renderer->drawCubeWires(cubePosition, cubeSize, cubeWireColour);
+        const std::vector<Block> &blocks = world.getBlocks();
+        size_t blockCount = blocks.size();
+        for (int i = 0; i < blockCount; ++i) {
+            renderer->drawCube(blocks[i].position, cubeSize, cubeColour);
+            renderer->drawCubeWires(cubePosition, cubeSize, cubeWireColour);
+        }
+
         renderer->drawGrid(10, 1.0f);
         camera->endMode3D();
 

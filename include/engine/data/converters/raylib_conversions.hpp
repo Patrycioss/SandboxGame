@@ -4,6 +4,7 @@
 #include "../colour.hpp"
 #include "engine/data/rect.hpp"
 #include "engine/data/vec3.hpp"
+#include "engine/data/vec3i.hpp"
 #include "engine/graphics/game_camera_mode.hpp"
 
 inline Color ColourToRaylibColor(const Colour &colour) {
@@ -20,6 +21,10 @@ inline Vector3 Vec3ToRaylibVector3(const Vec3 &vector) {
 
 inline Vec3 RaylibVector3ToVec3(const Vector3 &vector) {
     return Vec3(vector.x, vector.y, vector.z);
+}
+
+inline Vector3 Vec3iToRaylibVector3(const Vec3i &vector) {
+    return Vector3(vector.x, vector.y, vector.z); // NOLINT(*-narrowing-conversions)
 }
 
 inline CameraMode GameCameraModeToRaylibCameraMode(const GameCameraMode mode) {

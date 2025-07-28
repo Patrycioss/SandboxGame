@@ -18,7 +18,7 @@ private:
 
 public:
     Game();
-    virtual ~Game() = default;
+    ~Game() = default;
 
     Game(const Game &) = delete;
     Game(Game &&) = delete;
