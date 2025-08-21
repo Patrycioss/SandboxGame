@@ -22,5 +22,5 @@ public:
 
     int getWidth() override;
     int getHeight() override;
-    Vec2 getSize() override;
+    Vec2i getSize() override;
 };

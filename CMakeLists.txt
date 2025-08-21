@@ -28,6 +28,7 @@ set(SOURCES
         src/game/world/world.cpp
         include/game/world/world.hpp
         include/game/Block.hpp
+        include/engine/data/plane.hpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})

@@ -19,8 +19,14 @@ public:
     virtual void setPosition(const Vec3 &position) = 0;
     virtual void setTarget(const Vec3 &target) = 0;
     virtual void setFov(float fov) = 0;
+    virtual void setFar(float far) = 0;
+    virtual void setNear(float near) = 0;
 
     [[nodiscard]] virtual Vec3 getPosition() const = 0;
     [[nodiscard]] virtual Vec3 getTarget() const = 0;
+    [[nodiscard]] virtual Vec3 getUp() const = 0;
+    [[nodiscard]] virtual Vec3 getFront() const = 0;
     [[nodiscard]] virtual float getFov() const = 0;
+    [[nodiscard]] virtual float getFar() const = 0;
+    [[nodiscard]] virtual float getNear() const = 0;
 };

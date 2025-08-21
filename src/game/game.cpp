@@ -1,3 +1,4 @@
+#include <iostream>
 #include <thread>
 #include <game/game.hpp>
 #include <game/world/world.hpp>
@@ -16,7 +17,9 @@ Game::Game() : window(std::make_unique<RaylibWindow>(800, 600, "Hello World!")),
                    Vec3{0.0f, 0.0f, 0.0f},
                    Vec3{0.0f, 1.0f, 0.0f},
                    45.0f,
-                   GameCameraMode::CAMERA_FREE
+                   GameCameraMode::CAMERA_FREE,
+                   100.0f,
+                   0.1f
                )),
                input(std::make_unique<RaylibInput>()),
                randomGenerator(std::make_unique<RaylibRandomGenerator>(10.0f)) {
@@ -38,6 +41,8 @@ void Game::start() {
 
     World world{};
 
+    RenderTexture2D renderTexture = LoadRenderTexture(window->getSize().x, window->getSize().y);
+
     while (!WindowShouldClose()) {
         if (input->isKeyDown(Key::R)) {
             cubeColour.r = randomGenerator->getRandomInt(0, 255);
@@ -53,19 +58,30 @@ void Game::start() {
 
         camera->Update();
 
-
-        renderer->beginRendering();
+        BeginTextureMode(renderTexture);
+        ClearBackground(RAYWHITE);
         camera->beginMode3D();
 
         const std::vector<Block> &blocks = world.getBlocks();
         size_t blockCount = blocks.size();
         for (int i = 0; i < blockCount; ++i) {
-            renderer->drawCube(blocks[i].position, cubeSize, cubeColour);
-            renderer->drawCubeWires(cubePosition, cubeSize, cubeWireColour);
+            const Vec3i pos = blocks[i].position;
+            renderer->drawCube(pos, cubeSize, cubeColour);
+            renderer->drawCubeWires(pos, cubeSize, cubeWireColour);
         }
 
+
         renderer->drawGrid(10, 1.0f);
+
         camera->endMode3D();
+        EndTextureMode();
+
+
+        renderer->beginRendering();
+
+        DrawTextureRec(renderTexture.texture, (Rectangle){
+                           0, 0, (float) renderTexture.texture.width, (float) -renderTexture.texture.height
+                       }, {0, 0}, WHITE);
 
         renderer->drawRectangle({10, 10}, {320, 93}, rectColour);
         renderer->drawRectangleLines({10, 10}, {320, 93}, {255, 0, 0, 255});

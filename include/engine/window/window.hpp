@@ -1,5 +1,5 @@
 #pragma once
-#include "../data/vec2.hpp"
+#include "engine/data/vec2i.hpp"
 
 class Window {
 public:
@@ -14,5 +14,5 @@ public:
 
     virtual int getWidth() = 0;
     virtual int getHeight() = 0;
-    virtual Vec2 getSize() = 0;
+    virtual Vec2i getSize() = 0;
 };

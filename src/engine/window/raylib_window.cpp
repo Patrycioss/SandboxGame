@@ -22,8 +22,8 @@ int RaylibWindow::getHeight() {
     return height;
 }
 
-Vec2 RaylibWindow::getSize() {
-    return Vec2{static_cast<float>(width), static_cast<float>(height)};
+Vec2i RaylibWindow::getSize() {
+    return Vec2i{width, height};
 }
 
 
